@@ -56,9 +56,9 @@ def analyze(request):
             purpose = purpose + "Removed ExtraSpace"
     if removepunc!="on" and fullcaps != 'on' and newlineremover!='on' and extraspaceremover!='on' and len(djtext)>0:
         # return HttpResponse("Please choose atleast one option")
-        return render(request, 'analyze.html', {'purpose':'', 'analyzed_text':"                                 Please choose atleast one option"})
+        return render(request, 'analyze.html', {'purpose':'', 'analyzed_text':"Please choose atleast one option"})
     if len(djtext)==0:
-        return render(request, 'analyze.html', {'purpose':'', 'analyzed_text':"                                     You did'nt gave any text"})
+        return render(request, 'analyze.html', {'purpose':'', 'analyzed_text':"You did'nt gave any text"})
     
     params = {'purpose':purpose, 'analyzed_text':djtext}
     return render(request, 'analyze.html', params)
